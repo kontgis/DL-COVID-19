@@ -15,7 +15,7 @@
 
 `--location` : A list of administrative units to plot. Can be a list of counties, states, or mixture of both. Case insensitive. Default is a list of six states: California, Texas, New York, Illinois, Washington, Florida.
 
-`--category`: Type of administrative units. Options are "state", "county", "both", or "rank". "rank" is available if a state is specified as the location and will choose the counties with the highest mobility index in the state. This is required.
+`--category`: Type of administrative units. Options are "state", "county", "both", or "rank". "rank" is available if a state is specified as the location and will choose the counties with the highest mobility index in the state. Default is state.
 
 `--weekend`: Option to include data from weekends (`--weekends`) or to exclude data from weekends (`--skip_weekends`). Defaults to exclude weekend data.
 
@@ -32,11 +32,11 @@
 
 - The "rank" choice in the "category" flag returns the ten top-ranked counties for the specified state. Note that if you choose more than one state when using "rank," the top ten counties will be returned regardless of state.
 
-- If your locations are counties, be sure to specify the state to which each county belongs to ensure you"re getting the expected data (e.g. Orange County, FL vs Orange County, CA). If you list multiple counties from the same state, just specify the state once. If listing counties from multiple states, please list the states in the same order that their corresponding counties are listed (e.g. if your counties are Orange, Washington, and Santa Cruz, and you want data from Florida, Georgia, and Arizona, respectively, order your inputs as follows:
+- If your locations are counties, be sure to specify the state to which each county belongs to ensure you're getting the expected data (e.g. Orange County, FL vs Orange County, CA). If you list multiple counties from the same state, just specify the state once. If listing counties from multiple states, please list the states in the same order that their corresponding counties are listed (e.g. if your counties are Orange, Washington, and Santa Cruz, and you want data from Florida, Georgia, and Arizona, respectively, order your inputs as follows:
 
 	`python plot-mobility.py --location "orange" "washington" "santa cruz" --category county --county_state "florida" "georgia" "arizona"`
 
-- Also, for counties where there might be confusion between a state and a county (e.g. Washington State vs. many different states with a Washington County), it"s best practice to specify the word "county" when calling the script:
+- Also, for counties where there might be confusion between a state and a county (e.g. Washington State vs. many different states with a Washington County), it's best practice to specify the word "county" when calling the script:
 
 	`python plot-mobility.py --location "Denver county" "santa fe county" "santa barbara county" "new york" --category both --county_state "colorado" "new mexico" "california" "new york"`
 

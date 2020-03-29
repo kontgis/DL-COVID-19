@@ -13,19 +13,19 @@
 
 ### Arguments:
 
---location : A list of administrative units to plot. Can be a list of counties, states, or mixture of both. Case insensitive. Default is a list of six states: California, Texas, New York, Illinois, Washington, Florida.
+`--location` : A list of administrative units to plot. Can be a list of counties, states, or mixture of both. Case insensitive. Default is a list of six states: California, Texas, New York, Illinois, Washington, Florida.
 
---category: Type of administrative units. Options are "state", "county", "both", or "rank". "rank" is available if a state is specified as the location and will choose the counties with the highest mobility index in the state. This is required.
+`--category`: Type of administrative units. Options are "state", "county", "both", or "rank". "rank" is available if a state is specified as the location and will choose the counties with the highest mobility index in the state. This is required.
 
---weekend: Option to include data from weekends (--weekends) or to exclude data from weekends (--skip_weekends). Defaults to exclude weekend data.
+`--weekend`: Option to include data from weekends (`--weekends`) or to exclude data from weekends (`--skip_weekends`). Defaults to exclude weekend data.
 
---start_date: Start date for daily mobility indices. Defaults to "2020-03-02", which is the earliest date available to retreive data.
+`--start_date`: Start date for daily mobility indices. Defaults to "2020-03-02", which is the earliest date available to retreive data.
 
---end_date: End date for daily mobility indices. Defaults to the most recent date that data is available.
+`--end_date`: End date for daily mobility indices. Defaults to the most recent date that data is available.
 
---input_filename: Advanced option to specify a data file generated on a specific day. The default corresponds to the file generated two days prior to the current date.
+`--input_filename`: Advanced option to specify a data file generated on a specific day. The default corresponds to the file generated two days prior to the current date.
 
---output_filename: Option to specify output filename for plot. Appends user specification to "DL_mobility-index_". The default is "DL_mobility-index_{CURRENT DATE}.png"
+`--output_filename`: Option to specify output filename for plot. Appends user specification to "DL_mobility-index_". The default is "DL_mobility-index_{CURRENT DATE}.png"
 
 
 ## Notes:
@@ -44,6 +44,6 @@
 
 	`python plot-mobility.py --location "california" "los angeles county" "new york" "new york county" --category both --county_state "california" "california" "new york" "new york"`
 
-- If you choose to use the `start_date` and `end_date` flags, the date should be in ISO standard format (e.g YYYY-MM-DD ).
+- If you choose to use the `--start_date` and `--end_date` flags, the date should be in ISO standard format (e.g YYYY-MM-DD ).
 
 - Plots become difficult to interpret if you compare too many AOIs. For that reason, we recommend limiting your comparisons to less than 20.

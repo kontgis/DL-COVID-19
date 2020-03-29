@@ -42,7 +42,7 @@ def plot_covid(
         list containing: California, Texas, New York, Illinois, Washington, Florida.
     cat : list
         categorizes loc as states, counties, both, or rank; "rank" specifies 
-        to rank top ten counties within a state or states
+        to rank top ten counties within a state or states. default is state.
     cty_state : str or list
         a string or list of strings with the state that corresponds to
         counties if that is what is specified in loc
@@ -302,7 +302,7 @@ if __name__ == "__main__":
         "--category",
         type=str,
         choices=["state", "county", "both", "rank"],
-        required=True,
+        default="state",
     )
     parser.add_argument(
         "--county_state",
@@ -319,7 +319,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_filename",
         type=str,
-        default="DL-us-mobility.ndjson",
+        default="../DL-us-mobility.ndjson",
         help="ndjson file to load if not default",
     )
     parser.add_argument(

@@ -319,7 +319,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--input_filename",
         type=str,
-        default="../DL-us-mobility.ndjson",
+        default="DL-us-mobility.ndjson",
         help="ndjson file to load if not default",
     )
     parser.add_argument(
